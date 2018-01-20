@@ -11,5 +11,4 @@ and links.txt with a list of potentionally vulnerable websites
 
 ## To Do
 - Better error handling
-- Proxying
-- May switch to using Custom Search API if we keep getting CAPTCHA'd
+- Switch to Headless Chrome using Puppeteer for Google Searching (reCAPTCHA is busting my balls)
