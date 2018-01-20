@@ -3,6 +3,10 @@ const fs = require('fs');
 const LineByLine = require('line-by-line'),
     lr = new LineByLine('dorks.txt', {skipEmptyLines: true});
 google.resultsPerPage = 25;
+/*google.requestOptions = {
+    proxy: 'http://163.172.211.176:3128', // use this if getting 503
+    localAddress: '127.0.0.1'
+}*/
 var nextCounter = 0;
 var maxPages = 4;
 dorks = [];
