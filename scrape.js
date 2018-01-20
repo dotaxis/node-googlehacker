@@ -46,7 +46,7 @@ async function getDorks(num) {
     console.log(`Scraping ${num-1} dorks...`);
     try {
         for (i = 2; i <= num; i++) { // google hacking database starts at ID #2
-            const browser = await puppeteer.launch();
+            const browser = await puppeteer.launch({timeout: 10000});
             const page = await browser.newPage();
             await page.goto(`http://www.exploit-db.com/ghdb/${i}`);
 
@@ -58,6 +58,7 @@ async function getDorks(num) {
             fs.appendFileSync('dorks.txt', dork + '\n', (error) => {
                 if (error) {
                     console.log(`Error: ${error}`);
+                    process.exit(1); // kill kill kill
                 } else {
                     console.log('?');
                 }
